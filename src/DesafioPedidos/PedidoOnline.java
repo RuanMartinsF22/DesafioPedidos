@@ -8,6 +8,10 @@ public class PedidoOnline extends Pedido {
         this.endereco = endereco;
     }
 
+    public PedidoOnline(String idPedido, String nomeCliente, String descricao, double valor) {
+        super(idPedido, nomeCliente, descricao, valor);
+    }
+
     // Adiciona um método para obter o endereço
     public String getEndereco() {
         return endereco;
@@ -24,4 +28,9 @@ public class PedidoOnline extends Pedido {
         super.fazer();
         System.out.println("O pedido será entregue no endereço: " + endereco);
     }
+
+    public void retirar() {
+        System.out.println("Pedido " + getId() + " pronto para retirada.");
+    }
+
 }

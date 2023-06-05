@@ -42,6 +42,16 @@ public class Pedido {
             System.out.println("Pagamento registrado.");
         }
 
+        public void pagar() {
+            if(!isPago()) {
+            setPago(true);
+            System.out.println("Pagamento registrado.");
+            }
+            else {
+            System.out.println("Pedido já foi pago.");
+            }
+        }
+
         // Getters and Setters
         public String getId() {
             return id;
