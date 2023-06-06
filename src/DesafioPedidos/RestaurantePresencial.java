@@ -1,5 +1,7 @@
 package DesafioPedidos;
 
+import Modelo.List;
+
 import javax.swing.JOptionPane;
 import java.util.Map;
 import java.util.Scanner;
@@ -53,11 +55,13 @@ public class RestaurantePresencial {
         }
 
         String localCliente = "Mesa " + mesaEscolhida; // Utiliza a mesa escolhida pelo cliente
+        List.produtos();
         String tipoComida = solicitaInformacaoTipoComida("Informe o tipo de comida desejada: "); // Utiliza um novo método para solicitar o tipo de comida
         double valorPresencial = solicitaValor("Informe o valor do pedido presencial: ");
         String idPedido = solicitaInformacao("Informe o ID do pedido: ");
 
         PedidoPresencial pedido = new PedidoPresencial(idPedido, nomeClientePresencial, "pedido presencial", valorPresencial, localCliente);
+
         pedido.setTipoComida(tipoComida); // Define o tipo de comida no pedido
         restaurante.adicionarPedido(pedido);
         pedido.fazer();
@@ -212,5 +216,11 @@ public class RestaurantePresencial {
         } while (!valorValido);
         return valor;
     }
+
+
+
+
+
+
 }
 
